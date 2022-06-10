@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/VortxPlrWebSite/static/css/main.2a4a3a4b.css",
-    "main.js": "/VortxPlrWebSite/static/js/main.70e08cd5.js",
+    "main.js": "/VortxPlrWebSite/static/js/main.b84bfb63.js",
     "static/js/787.c5aa6610.chunk.js": "/VortxPlrWebSite/static/js/787.c5aa6610.chunk.js",
     "static/media/399DC5_0_0.svg": "/VortxPlrWebSite/static/media/399DC5_0_0.1bc8ef09f8ad43817e7b.svg",
     "static/media/399DC5_0_0.ttf": "/VortxPlrWebSite/static/media/399DC5_0_0.6dc741a016ee224b2cba.ttf",
@@ -10,11 +10,11 @@
     "static/media/logo-vortx.svg": "/VortxPlrWebSite/static/media/logo-vortx.aca405df82c348bb9457e273ae4e7465.svg",
     "index.html": "/VortxPlrWebSite/index.html",
     "main.2a4a3a4b.css.map": "/VortxPlrWebSite/static/css/main.2a4a3a4b.css.map",
-    "main.70e08cd5.js.map": "/VortxPlrWebSite/static/js/main.70e08cd5.js.map",
+    "main.b84bfb63.js.map": "/VortxPlrWebSite/static/js/main.b84bfb63.js.map",
     "787.c5aa6610.chunk.js.map": "/VortxPlrWebSite/static/js/787.c5aa6610.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2a4a3a4b.css",
-    "static/js/main.70e08cd5.js"
+    "static/js/main.b84bfb63.js"
   ]
 }
