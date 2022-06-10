@@ -19,6 +19,7 @@ import {
   IndicadoresIcon,
   FormGroup,
 } from './styles'
+import InputCurrency from '../InputCurrency/InputCurrency'
 
 export default function FormularioCalculoBonus({ onCalcularPlr, indicadores }) {
   const [nivel, setNivel] = useState('Pro')
@@ -89,9 +90,8 @@ export default function FormularioCalculoBonus({ onCalcularPlr, indicadores }) {
                         name="salario_base"
                         control={control}
                         render={({ field: { onChange, value } }) => (
-                          <Input
+                          <InputCurrency
                             id="salario_base"
-                            type="number"
                             error={Boolean(errors?.salario_base?.message)}
                             errorMessage={errors?.salario_base?.message}
                             value={value}
@@ -142,7 +142,7 @@ export default function FormularioCalculoBonus({ onCalcularPlr, indicadores }) {
                         name="ebitida"
                         control={control}
                         render={({ field: { onChange, value } }) => (
-                          <Input
+                          <InputCurrency
                             id="ebitida"
                             type="number"
                             error={Boolean(errors?.ebitida?.message)}
@@ -165,7 +165,7 @@ export default function FormularioCalculoBonus({ onCalcularPlr, indicadores }) {
                         name="receitaBruta"
                         control={control}
                         render={({ field: { onChange, value } }) => (
-                          <Input
+                          <InputCurrency
                             id="receitaBruta"
                             type="number"
                             error={Boolean(errors?.receitaBruta?.message)}

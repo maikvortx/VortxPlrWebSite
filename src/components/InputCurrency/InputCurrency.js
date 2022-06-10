@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classNames from 'classnames'
+import NumberFormat from 'react-number-format'
 import { makeStyles } from '@mui/styles'
 import { FormControl, InputLabel, OutlinedInput } from '@mui/material'
 
@@ -9,7 +10,31 @@ import ErrorMessage from '../ErrorMessage'
 
 const useStyles = makeStyles(styles)
 
-export default function Input(props) {
+const NumberFormatCustom = React.forwardRef(function NumberFormatCustom(props, ref) {
+  const { onChange, ...other } = props;
+
+  return (
+    <NumberFormat
+      {...other}
+      getInputRef={ref}
+      onValueChange={(values) => {
+        onChange({
+          target: {
+            name: props.name,
+            value: values.value,
+          },
+        });
+      }}
+      thousandSeparator="."
+      decimalSeparator=","
+      decimalScale="2"
+      isNumericString
+      prefix="R$"
+    />
+  );
+});
+
+export default function InputCurrency(props) {
   const classes = useStyles()
   const {
     formControlProps,
@@ -74,17 +99,16 @@ export default function Input(props) {
         error={error}
         disabled={disabled}
         id={id}
-        type={type}
         rows={rows}
-        multiline={multiline}
         {...inputProps}
+        inputComponent={NumberFormatCustom}
       />
       {error && errorMessage && <ErrorMessage message={errorMessage} />}
     </FormControl>
   )
 }
 
-Input.propTypes = {
+InputCurrency.propTypes = {
   labelText: PropTypes.node,
   labelProps: PropTypes.object,
   id: PropTypes.string,
