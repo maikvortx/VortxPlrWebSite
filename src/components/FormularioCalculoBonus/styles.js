@@ -3,6 +3,9 @@ import { CardContent, Typography } from '@mui/material'
 import { Close, DensityMedium, SettingsApplications } from '@mui/icons-material'
 
 export const ContainerCadastro = styled.div`
+  position: absolute;
+  top: 150px;
+  width: 800px;
   @media only screen and (max-width: 920px) {
     width: 100%;
     margin-top: 40px;
@@ -54,9 +57,14 @@ export const CloseIcon = styled(Close)`
   cursor: pointer;
 `
 
-export const TituloFormulario = styled(Typography)`
+export const TituloFormulario = styled.p`
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.8em;
   margin-bottom: 15px;
   font-weight: 700;
+`
+
+export const FormGroup = styled.div`
+  margin-bottom: 20px;
+  margin-top: 20px;
 `

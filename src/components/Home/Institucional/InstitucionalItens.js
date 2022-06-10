@@ -1,7 +1,7 @@
 const institucionalItens = [
   {
     id: '1',
-    imagePath: '/img/quais-produtos-operamos.png',
+    imagePath: process.env.PUBLIC_URL + '/img/quais-produtos-operamos.png',
     altText: 'EBITDA',
     titleBold: 'O que é o',
     title: 'EBITDA?',
@@ -10,7 +10,7 @@ const institucionalItens = [
   },
   {
     id: '2',
-    imagePath: '/img/o-que-e-como-fazemos.png',
+    imagePath: process.env.PUBLIC_URL + '/img/o-que-e-como-fazemos.png',
     altText: 'RECEITA BRUTA',
     titleBold: 'O que é a',
     title: 'Receita Bruta?',
@@ -19,7 +19,7 @@ const institucionalItens = [
   },
   {
     id: '3',
-    imagePath: '/img/quais-produtos-operamos.png',
+    imagePath: process.env.PUBLIC_URL + '/img/quais-produtos-operamos.png',
     altText: 'NPS',
     titleBold: 'O que é o',
     title: 'NPS?',
@@ -28,7 +28,7 @@ const institucionalItens = [
   },
   {
     id: '4',
-    imagePath: '/img/o-que-somos.png',
+    imagePath: process.env.PUBLIC_URL + '/img/o-que-somos.png',
     altText: 'Avaliação de desempenho',
     titleBold: 'O que é a',
     title: 'Avaliação de desempenho?',

@@ -5,7 +5,7 @@ export const Section = styled.div`
 `
 export const Container = styled.div`
   background-color: #202020;
-  padding: 7rem 6.5rem 0 6.5rem;
+  padding: 0 6.5rem 0rem 6.5rem;
   margin: 0 auto;
   color: #ffffff;
   display: flex;

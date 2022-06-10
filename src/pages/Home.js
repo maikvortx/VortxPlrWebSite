@@ -11,7 +11,7 @@ const Home = () => {
       <Banner />
       {/* <TopTokens /> */}
       <Institucional />
-      <NossosNumeros />
+      {/* <NossosNumeros /> */}
       {/* <NaMidia /> */}
       <Faq />
     </>

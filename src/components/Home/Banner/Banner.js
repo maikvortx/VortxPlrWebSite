@@ -68,7 +68,7 @@ const Banner = () => {
       <Background>
         <SectionBanner>
           {/* <Slogan /> */}
-          <Title>PLR 2022</Title>
+          {/* <Title>PLR 2022</Title> */}
           {/* <Text>O programa de PLR da Vórtx mudou e mudou pra melhor!</Text> */}
           <FormularioCalculoBonus onCalcularPlr={onCalcularPlr} indicadores={indicadores} />
         </SectionBanner>

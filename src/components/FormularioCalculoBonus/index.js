@@ -17,6 +17,7 @@ import {
   TituloFormulario,
   HeaderFomulario,
   IndicadoresIcon,
+  FormGroup,
 } from './styles'
 
 export default function FormularioCalculoBonus({ onCalcularPlr, indicadores }) {
@@ -52,153 +53,157 @@ export default function FormularioCalculoBonus({ onCalcularPlr, indicadores }) {
                     Seus dados
                   </TituloFormulario>
                 </HeaderFomulario>
-                <GridContainer>
-                  <GridItem xs={12} sm={12}>
-                    <InputLabel>Nível*</InputLabel>
-                    <Controller
-                      defaultValue={nivel}
-                      name="nivel"
-                      control={control}
-                      render={({ field: { value, onChange } }) => (
-                        <Dropdown
-                          id="nivel"
-                          error={Boolean(errors?.nivel?.message)}
-                          errorMessage={errors?.nivel?.message}
-                          value={value}
-                          onChange={(value) => {
-                            setValue('salario_base', '')
-                            setNivel(value)
-                            onChange(value)
-                          }}
-                          options={listaNiveis?.map((option) => ({
-                            label: option.nome,
-                            value: option.id
-                          }))}
-                        />
-                      )}
-                    />
-                  </GridItem>
-                </GridContainer>
-                <GridContainer>
-                  <GridItem xs={12} sm={12}>
-                    <InputLabel>Salário Base*</InputLabel>
-                    <Controller
-                      defaultValue={''}
-                      name="salario_base"
-                      control={control}
-                      render={({ field: { onChange, value } }) => (
-                        <Input
-                          id="salario_base"
-                          type="number"
-                          error={Boolean(errors?.salario_base?.message)}
-                          errorMessage={errors?.salario_base?.message}
-                          value={value}
-                          inputProps={{
-                            placeholder: ``,
-                            onChange: (e) => onChange(e.target.value)
-                          }}
-                        />
-                      )}
-                    />
-                  </GridItem>
-                </GridContainer>
-                <GridContainer>
-                  <GridItem xs={12} sm={12}>
-                    <InputLabel>Nota Avaliação*</InputLabel>
-                    <Controller
-                      defaultValue={''}
-                      name="multiplo_salario_anual"
-                      control={control}
-                      render={({ field: { onChange, value } }) => (
-                        <Input
-                          id="multiplo_salario_anual"
-                          type="number"
-                          error={Boolean(errors?.multiplo_salario_anual?.message)}
-                          errorMessage={errors?.multiplo_salario_anual?.message}
-                          value={value}
-                          inputProps={{
-                            placeholder: '',
-                            onChange: (e) => onChange(e.target.value)
-                          }}
-                        />
-                      )}
-                    />
-                  </GridItem>
-                </GridContainer>
+                <FormGroup>
+                  <GridContainer>
+                    <GridItem xs={12} sm={12}>
+                      <InputLabel>Nível*</InputLabel>
+                      <Controller
+                        defaultValue={nivel}
+                        name="nivel"
+                        control={control}
+                        render={({ field: { value, onChange } }) => (
+                          <Dropdown
+                            id="nivel"
+                            error={Boolean(errors?.nivel?.message)}
+                            errorMessage={errors?.nivel?.message}
+                            value={value}
+                            onChange={(value) => {
+                              setValue('salario_base', '')
+                              setNivel(value)
+                              onChange(value)
+                            }}
+                            options={listaNiveis?.map((option) => ({
+                              label: option.nome,
+                              value: option.id
+                            }))}
+                          />
+                        )}
+                      />
+                    </GridItem>
+                  </GridContainer>
+                  <GridContainer>
+                    <GridItem xs={12} sm={12}>
+                      <InputLabel>Salário Base*</InputLabel>
+                      <Controller
+                        defaultValue={''}
+                        name="salario_base"
+                        control={control}
+                        render={({ field: { onChange, value } }) => (
+                          <Input
+                            id="salario_base"
+                            type="number"
+                            error={Boolean(errors?.salario_base?.message)}
+                            errorMessage={errors?.salario_base?.message}
+                            value={value}
+                            inputProps={{
+                              placeholder: ``,
+                              onChange: (e) => onChange(e.target.value)
+                            }}
+                          />
+                        )}
+                      />
+                    </GridItem>
+                  </GridContainer>
+                  <GridContainer>
+                    <GridItem xs={12} sm={12}>
+                      <InputLabel>Nota Avaliação*</InputLabel>
+                      <Controller
+                        defaultValue={''}
+                        name="multiplo_salario_anual"
+                        control={control}
+                        render={({ field: { onChange, value } }) => (
+                          <Input
+                            id="multiplo_salario_anual"
+                            type="number"
+                            error={Boolean(errors?.multiplo_salario_anual?.message)}
+                            errorMessage={errors?.multiplo_salario_anual?.message}
+                            value={value}
+                            inputProps={{
+                              placeholder: '',
+                              onChange: (e) => onChange(e.target.value)
+                            }}
+                          />
+                        )}
+                      />
+                    </GridItem>
+                  </GridContainer>
+                </FormGroup>
                 <HeaderFomulario>
                   <TituloFormulario>
                     Indicadores
                   </TituloFormulario>
                 </HeaderFomulario>
-                <GridContainer>
-                  <GridItem xs={12} sm={12}>
-                    <InputLabel>Ebitida</InputLabel>
-                    <Controller
-                      defaultValue={''}
-                      name="ebitida"
-                      control={control}
-                      render={({ field: { onChange, value } }) => (
-                        <Input
-                          id="ebitida"
-                          type="number"
-                          error={Boolean(errors?.ebitida?.message)}
-                          errorMessage={errors?.ebitida?.message}
-                          value={value}
-                          inputProps={{
-                            placeholder: ``,
-                            onChange: (e) => onChange(e.target.value)
-                          }}
-                        />
-                      )}
-                    />
-                  </GridItem>
-                </GridContainer>
-                <GridContainer>
-                  <GridItem xs={12} sm={12}>
-                    <InputLabel>Receita Bruta*</InputLabel>
-                    <Controller
-                      defaultValue={''}
-                      name="receitaBruta"
-                      control={control}
-                      render={({ field: { onChange, value } }) => (
-                        <Input
-                          id="receitaBruta"
-                          type="number"
-                          error={Boolean(errors?.receitaBruta?.message)}
-                          errorMessage={errors?.receitaBruta?.message}
-                          value={value}
-                          inputProps={{
-                            placeholder: '',
-                            onChange: (e) => onChange(e.target.value)
-                          }}
-                        />
-                      )}
-                    />
-                  </GridItem>
-                </GridContainer>
-                <GridContainer>
-                  <GridItem xs={12} sm={12}>
-                    <InputLabel>NPS*</InputLabel>
-                    <Controller
-                      defaultValue={''}
-                      name="nps"
-                      control={control}
-                      render={({ field: { onChange, value } }) => (
-                        <Input
-                          id="nps"
-                          type="number"
-                          error={Boolean(errors?.nps?.message)}
-                          errorMessage={errors?.nps?.message}
-                          value={value}
-                          inputProps={{
-                            placeholder: '',
-                            onChange: (e) => onChange(e.target.value)
-                          }}
-                        />
-                      )}
-                    />
-                  </GridItem>
-                </GridContainer>
+                <FormGroup>
+                  <GridContainer>
+                    <GridItem xs={12} sm={12}>
+                      <InputLabel>Ebitida</InputLabel>
+                      <Controller
+                        defaultValue={''}
+                        name="ebitida"
+                        control={control}
+                        render={({ field: { onChange, value } }) => (
+                          <Input
+                            id="ebitida"
+                            type="number"
+                            error={Boolean(errors?.ebitida?.message)}
+                            errorMessage={errors?.ebitida?.message}
+                            value={value}
+                            inputProps={{
+                              placeholder: ``,
+                              onChange: (e) => onChange(e.target.value)
+                            }}
+                          />
+                        )}
+                      />
+                    </GridItem>
+                  </GridContainer>
+                  <GridContainer>
+                    <GridItem xs={12} sm={12}>
+                      <InputLabel>Receita Bruta*</InputLabel>
+                      <Controller
+                        defaultValue={''}
+                        name="receitaBruta"
+                        control={control}
+                        render={({ field: { onChange, value } }) => (
+                          <Input
+                            id="receitaBruta"
+                            type="number"
+                            error={Boolean(errors?.receitaBruta?.message)}
+                            errorMessage={errors?.receitaBruta?.message}
+                            value={value}
+                            inputProps={{
+                              placeholder: '',
+                              onChange: (e) => onChange(e.target.value)
+                            }}
+                          />
+                        )}
+                      />
+                    </GridItem>
+                  </GridContainer>
+                  <GridContainer>
+                    <GridItem xs={12} sm={12}>
+                      <InputLabel>NPS*</InputLabel>
+                      <Controller
+                        defaultValue={''}
+                        name="nps"
+                        control={control}
+                        render={({ field: { onChange, value } }) => (
+                          <Input
+                            id="nps"
+                            type="number"
+                            error={Boolean(errors?.nps?.message)}
+                            errorMessage={errors?.nps?.message}
+                            value={value}
+                            inputProps={{
+                              placeholder: '',
+                              onChange: (e) => onChange(e.target.value)
+                            }}
+                          />
+                        )}
+                      />
+                    </GridItem>
+                  </GridContainer>
+                </FormGroup>
               </>
             )}
 

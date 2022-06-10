@@ -68,7 +68,7 @@ const Institucional = () => {
 
   return (
     <Section id="sobre-nos">
-      <Container>
+      <Container style={{ paddingTop: '15rem' }}>
         <Arrows
           width="20"
           height="20"
@@ -111,7 +111,7 @@ const Institucional = () => {
           />
         </Arrows>
       </Container>
-      <Container>
+      <Container style={{ paddingBottom: '5rem' }}>
         {institucionalItens.map((item) => (
           <ContentInfo
             key={item.id}

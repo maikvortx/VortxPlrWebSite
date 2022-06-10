@@ -42,7 +42,6 @@ export const Background = styled.div`
 
   @media only screen and (max-width: 920px) {
     overflow-y: scroll;
-    padding: 100px 15px;
   }
 `
 
