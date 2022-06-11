@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/VortxPlrWebSite/static/css/main.2a4a3a4b.css",
-    "main.js": "/VortxPlrWebSite/static/js/main.7e3b2f4a.js",
-    "static/js/787.c5aa6610.chunk.js": "/VortxPlrWebSite/static/js/787.c5aa6610.chunk.js",
-    "static/media/399DC5_0_0.svg": "/VortxPlrWebSite/static/media/399DC5_0_0.1bc8ef09f8ad43817e7b.svg",
-    "static/media/399DC5_0_0.ttf": "/VortxPlrWebSite/static/media/399DC5_0_0.6dc741a016ee224b2cba.ttf",
-    "static/media/399DC5_0_0.woff": "/VortxPlrWebSite/static/media/399DC5_0_0.b24fe0afda2b40504f18.woff",
-    "static/media/399DC5_0_0.eot": "/VortxPlrWebSite/static/media/399DC5_0_0.e3dd8454f4f56ffcf731.eot",
-    "static/media/logo-vortx.svg": "/VortxPlrWebSite/static/media/logo-vortx.aca405df82c348bb9457e273ae4e7465.svg",
-    "index.html": "/VortxPlrWebSite/index.html",
-    "main.2a4a3a4b.css.map": "/VortxPlrWebSite/static/css/main.2a4a3a4b.css.map",
-    "main.7e3b2f4a.js.map": "/VortxPlrWebSite/static/js/main.7e3b2f4a.js.map",
-    "787.c5aa6610.chunk.js.map": "/VortxPlrWebSite/static/js/787.c5aa6610.chunk.js.map"
+    "main.css": "/vortx-simulador-plr/static/css/main.6a08a2d2.css",
+    "main.js": "/vortx-simulador-plr/static/js/main.863bca63.js",
+    "static/js/787.ac08c660.chunk.js": "/vortx-simulador-plr/static/js/787.ac08c660.chunk.js",
+    "static/media/399DC5_0_0.svg": "/vortx-simulador-plr/static/media/399DC5_0_0.1bc8ef09f8ad43817e7b.svg",
+    "static/media/399DC5_0_0.ttf": "/vortx-simulador-plr/static/media/399DC5_0_0.6dc741a016ee224b2cba.ttf",
+    "static/media/399DC5_0_0.woff": "/vortx-simulador-plr/static/media/399DC5_0_0.b24fe0afda2b40504f18.woff",
+    "static/media/399DC5_0_0.eot": "/vortx-simulador-plr/static/media/399DC5_0_0.e3dd8454f4f56ffcf731.eot",
+    "static/media/logo-vortx.svg": "/vortx-simulador-plr/static/media/logo-vortx.aca405df82c348bb9457e273ae4e7465.svg",
+    "index.html": "/vortx-simulador-plr/index.html",
+    "main.6a08a2d2.css.map": "/vortx-simulador-plr/static/css/main.6a08a2d2.css.map",
+    "main.863bca63.js.map": "/vortx-simulador-plr/static/js/main.863bca63.js.map",
+    "787.ac08c660.chunk.js.map": "/vortx-simulador-plr/static/js/787.ac08c660.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2a4a3a4b.css",
-    "static/js/main.7e3b2f4a.js"
+    "static/css/main.6a08a2d2.css",
+    "static/js/main.863bca63.js"
   ]
 }
