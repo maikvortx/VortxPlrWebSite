@@ -52,8 +52,7 @@ export default class Ebitida {
 
 }
 
-export function EbitidaFactory(bonificacaoAlvo) {
-  const ebitida = Number.parseFloat(process.env.NEXT_PUBLIC_EBIIDA)
+export function EbitidaFactory(bonificacaoAlvo, obtidoEbitida) {
   return new Ebitida(
     'Ebitida',
     0.15,
@@ -61,7 +60,7 @@ export function EbitidaFactory(bonificacaoAlvo) {
       aceitavel: 95.389,
       esperado: 102.469,
       excepcional: 109.549,
-      obtido: ebitida
+      obtido: obtidoEbitida
     },
     {
       minimo: 0.75,

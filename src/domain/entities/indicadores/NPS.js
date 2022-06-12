@@ -54,8 +54,8 @@ export default class NPS {
 
 }
 
-export function NPSFactory(bonificacaoAlvo, atingimentoGatilhoGeral) {
-  const nps = Number.parseFloat(process.env.NEXT_PUBLIC_NPS)
+export function NPSFactory(bonificacaoAlvo, atingimentoGatilhoGeral, valorNps) {
+  
   return new NPS(
     'NPS',
     0.2,
@@ -63,7 +63,7 @@ export function NPSFactory(bonificacaoAlvo, atingimentoGatilhoGeral) {
       aceitavel: null,
       esperado: 30,
       excepcional: 51,
-      obtido: nps
+      obtido: valorNps
     },
     {
       minimo: 0.5,

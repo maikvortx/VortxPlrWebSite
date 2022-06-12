@@ -8,7 +8,8 @@ import FormatHelper from '../../helpers/formatHelper'
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-import { Container, Section, BonificacaoItem, ProgressContainer } from './style'
+import { Container, Section, BonificacaoItem, ProgressContainer, TituloCard } from './style'
+import uuid from '../../helpers/uuid'
 
 const ResultadoPLR = ({
     indicadores,
@@ -29,26 +30,47 @@ const ResultadoPLR = ({
             setQuantidadeSalarios((valorFinal / salarioBase).toFixed(1))
             setPercentualRelacaoAlvo((valorFinal / salarioBase) / multiploSalarioAnual)
         }
-    }, [indicadores])
+    }, [indicadores, salarioBase, multiploSalarioAnual])
 
 
     const CircularChart = ({ currentValue, minValue, maxValue, text, pathColor }) => {
-        debugger
         return (
             <>
                 <CircularProgressbar
                     styles={buildStyles({
                         strokeLinecap: 'butt',
-                        textSize: '12px',
+                        textSize: '10px',
                         pathTransitionDuration: 0.5,
                         pathColor: pathColor,
                         textColor: '#666',
-                        trailColor: '#d6d6d6',
+                        trailColor: '#d6d6d6'
                     })}
                     value={currentValue}
                     minValue={minValue}
                     maxValue={maxValue}
                     text={text} />
+            </>
+        )
+    }
+
+    const BonificacaoInfo = ({ pontoInicial, pontoMedio, pontoMaximo }) => {
+        return (
+            <>
+                <Typography style={{ marginBottom: '1.3em' }} variant="h6" component="div">
+                    Bonificação
+                </Typography>
+                <BonificacaoItem>
+                    <p>Inicial</p>
+                    <p>{FormatHelper.formatCurrency(pontoInicial)}</p>
+                </BonificacaoItem>
+                <BonificacaoItem>
+                    <p>Médio</p>
+                    <p>{FormatHelper.formatCurrency(pontoMedio)}</p>
+                </BonificacaoItem>
+                <BonificacaoItem>
+                    <p>Máximo</p>
+                    <p>{FormatHelper.formatCurrency(pontoMaximo)}</p>
+                </BonificacaoItem>
             </>
         )
     }
@@ -62,12 +84,12 @@ const ResultadoPLR = ({
                             const [pontoInicial, pontoMedio, pontoMaximo] = indicador.getBonificacaoIndicador()
                             return (
                                 <>
-                                    <Grid item xs={3}>
+                                    <Grid key={uuid()} item xs={3}>
                                         <Card>
                                             <CardContent>
-                                                <Typography variant="h6" component="div">
+                                                <TituloCard>
                                                     {indicador.titulo}
-                                                </Typography>
+                                                </TituloCard>
                                                 <ProgressContainer>
                                                     <CircularChart
                                                         pathColor={'#c12c2c'}
@@ -76,21 +98,7 @@ const ResultadoPLR = ({
                                                         maxValue={pontoMaximo}
                                                         text={indicador.getFormattedValue()} />
                                                 </ProgressContainer>
-                                                <Typography style={{ marginBottom: '1.3em' }} variant="h6" component="div">
-                                                    Bonificação
-                                                </Typography>
-                                                <BonificacaoItem>
-                                                    <p>Inicial</p>
-                                                    <p>{FormatHelper.formatCurrency(pontoInicial)}</p>
-                                                </BonificacaoItem>
-                                                <BonificacaoItem>
-                                                    <p>Médio</p>
-                                                    <p>{FormatHelper.formatCurrency(pontoMedio)}</p>
-                                                </BonificacaoItem>
-                                                <BonificacaoItem>
-                                                    <p>Máximo</p>
-                                                    <p>{FormatHelper.formatCurrency(pontoMaximo)}</p>
-                                                </BonificacaoItem>
+                                                {/* <BonificacaoInfo pontoInicial={pontoInicial} pontoMedio={pontoMedio} pontoMaximo={pontoMaximo} /> */}
                                             </CardContent>
                                         </Card>
                                     </Grid>
@@ -99,19 +107,17 @@ const ResultadoPLR = ({
                         })}
                     </Grid>
                 </Section>
-
-
                 <Section>
                     <Grid container spacing={2}>
                         <Grid item xs={4}>
                             <Card>
                                 <CardContent>
-                                    <Typography variant="h6" component="div">
+                                    <TituloCard>
                                         Bonificação Final
-                                    </Typography>
+                                    </TituloCard>
                                     <Typography
                                         variant="body2"
-                                        style={{ fontSize: 18, paddingTop: 20 }}
+                                        style={{ fontSize: 16, paddingTop: 20 }}
                                     >
                                         {FormatHelper.formatCurrency(bonificacaoFinal)}
                                     </Typography>
@@ -121,12 +127,12 @@ const ResultadoPLR = ({
                         <Grid item xs={4}>
                             <Card>
                                 <CardContent>
-                                    <Typography variant="h6" component="div">
+                                    <TituloCard>
                                         Quantidade de Salários/Mês
-                                    </Typography>
+                                    </TituloCard>
                                     <Typography
                                         variant="body2"
-                                        style={{ fontSize: 18, paddingTop: 20 }}
+                                        style={{ fontSize: 16, paddingTop: 20 }}
                                     >
                                         {quantidadeSalarios}
                                     </Typography>
@@ -136,12 +142,12 @@ const ResultadoPLR = ({
                         <Grid item xs={4}>
                             <Card>
                                 <CardContent>
-                                    <Typography variant="h6" component="div">
+                                    <TituloCard>
                                         % em relação ao Alvo
-                                    </Typography>
+                                    </TituloCard>
                                     <Typography
                                         variant="body2"
-                                        style={{ fontSize: 18, paddingTop: 20 }}
+                                        style={{ fontSize: 16, paddingTop: 20 }}
                                     >
                                         {FormatHelper.formatPercent(percentualRelacaoAlvo)}
                                     </Typography>

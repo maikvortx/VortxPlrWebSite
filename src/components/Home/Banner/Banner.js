@@ -33,25 +33,29 @@ const Banner = () => {
 
   const onCalcularPlr = (calculoInput) => {
     try {
-      const { multiplo_salario_anual, nivel, salario_base } = calculoInput
+      const { multiplo_salario_anual, nivel, salario_base, obtidoEbitida, obitidoReceitaBruta, obitidoNps } = calculoInput
 
       const salario = Number.parseFloat(salario_base)
       const multiploSalario = Number.parseFloat(multiplo_salario_anual)
+      const valorEbitida = Number.parseFloat(obtidoEbitida)
+      const valorReceitaBruta = Number.parseFloat(obitidoReceitaBruta)
+      const valorNps = Number.parseFloat(obitidoNps)
 
       const remuneracaoCargo = new RemuneracaoCargo(nivel)
       const bonificacaoAlvo = remuneracaoCargo.calcularBonusAlvo(salario, nivel)
 
-      const ebitida = EbitidaFactory(bonificacaoAlvo)
+      const ebitida = EbitidaFactory(bonificacaoAlvo, valorEbitida)
       const atingimentoGatilhoGeral = !(ebitida.getValorPagamentoIndicador() === 0)
       const avaliacaoDesempenho = AvaliacaoDesempenhoFactory(bonificacaoAlvo, multiploSalario, atingimentoGatilhoGeral)
-      const nps = NPSFactory(bonificacaoAlvo, atingimentoGatilhoGeral)
-      const receitaBruta = ReceitaBrutaFactory(bonificacaoAlvo, atingimentoGatilhoGeral)
+      const nps = NPSFactory(bonificacaoAlvo, atingimentoGatilhoGeral, valorNps)
+      const receitaBruta = ReceitaBrutaFactory(bonificacaoAlvo, atingimentoGatilhoGeral, valorReceitaBruta)
 
       setSalarioBase(salario)
       setIndicadores([ebitida, avaliacaoDesempenho, nps, receitaBruta])
       setMultiploSalarioAnual(multiploSalario)
 
       handleModal()
+      debugger
     } catch (error) {
       console.error(error)
       toast.notify(

@@ -16,3 +16,9 @@ export const BonificacaoItem = styled.div`
     justify-content: space-between;
     margin: 5px 0;
 `   
+
+export const TituloCard = styled.p`
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 500;
+  font-size: 1.2em;
+`

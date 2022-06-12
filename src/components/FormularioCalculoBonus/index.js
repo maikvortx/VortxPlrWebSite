@@ -139,14 +139,14 @@ export default function FormularioCalculoBonus({ onCalcularPlr, indicadores }) {
                       <InputLabel>Ebitida</InputLabel>
                       <Controller
                         defaultValue={''}
-                        name="ebitida"
+                        name="obtidoEbitida"
                         control={control}
                         render={({ field: { onChange, value } }) => (
                           <InputCurrency
-                            id="ebitida"
+                            id="obtidoEbitida"
                             type="number"
-                            error={Boolean(errors?.ebitida?.message)}
-                            errorMessage={errors?.ebitida?.message}
+                            error={Boolean(errors?.obtidoEbitida?.message)}
+                            errorMessage={errors?.obtidoEbitida?.message}
                             value={value}
                             inputProps={{
                               placeholder: ``,
@@ -162,14 +162,14 @@ export default function FormularioCalculoBonus({ onCalcularPlr, indicadores }) {
                       <InputLabel>Receita Bruta*</InputLabel>
                       <Controller
                         defaultValue={''}
-                        name="receitaBruta"
+                        name="obitidoReceitaBruta"
                         control={control}
                         render={({ field: { onChange, value } }) => (
                           <InputCurrency
-                            id="receitaBruta"
+                            id="obitidoReceitaBruta"
                             type="number"
-                            error={Boolean(errors?.receitaBruta?.message)}
-                            errorMessage={errors?.receitaBruta?.message}
+                            error={Boolean(errors?.obitidoReceitaBruta?.message)}
+                            errorMessage={errors?.obitidoReceitaBruta?.message}
                             value={value}
                             inputProps={{
                               placeholder: '',
@@ -185,14 +185,14 @@ export default function FormularioCalculoBonus({ onCalcularPlr, indicadores }) {
                       <InputLabel>NPS*</InputLabel>
                       <Controller
                         defaultValue={''}
-                        name="nps"
+                        name="obitidoNps"
                         control={control}
                         render={({ field: { onChange, value } }) => (
                           <Input
-                            id="nps"
+                            id="obitidoNps"
                             type="number"
-                            error={Boolean(errors?.nps?.message)}
-                            errorMessage={errors?.nps?.message}
+                            error={Boolean(errors?.obitidoNps?.message)}
+                            errorMessage={errors?.obitidoNps?.message}
                             value={value}
                             inputProps={{
                               placeholder: '',

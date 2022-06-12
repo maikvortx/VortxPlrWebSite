@@ -54,9 +54,7 @@ export default class ReceitaBruta {
 
 }
 
-export function ReceitaBrutaFactory(bonificacaoAlvo, atingimentoGatilhoGeral) {
-  const receitaBruta = Number.parseFloat(process.env.NEXT_PUBLIC_RECEITA_BRUTA)
-
+export function ReceitaBrutaFactory(bonificacaoAlvo, atingimentoGatilhoGeral, valorReceitaBruta) {
   return new ReceitaBruta(
     'Receita Bruta',
     0.15,
@@ -64,7 +62,7 @@ export function ReceitaBrutaFactory(bonificacaoAlvo, atingimentoGatilhoGeral) {
       aceitavel: 187.486,
       esperado: 201.455,
       excepcional: 215.425,
-      obtido: receitaBruta
+      obtido: valorReceitaBruta
     },
     {
       minimo: 0.75,
