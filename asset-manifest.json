@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vortx-simulador-plr/static/css/main.6a08a2d2.css",
-    "main.js": "/vortx-simulador-plr/static/js/main.863bca63.js",
+    "main.js": "/vortx-simulador-plr/static/js/main.4e35a4f5.js",
     "static/js/787.ac08c660.chunk.js": "/vortx-simulador-plr/static/js/787.ac08c660.chunk.js",
     "static/media/399DC5_0_0.svg": "/vortx-simulador-plr/static/media/399DC5_0_0.1bc8ef09f8ad43817e7b.svg",
     "static/media/399DC5_0_0.ttf": "/vortx-simulador-plr/static/media/399DC5_0_0.6dc741a016ee224b2cba.ttf",
@@ -10,11 +10,11 @@
     "static/media/logo-vortx.svg": "/vortx-simulador-plr/static/media/logo-vortx.aca405df82c348bb9457e273ae4e7465.svg",
     "index.html": "/vortx-simulador-plr/index.html",
     "main.6a08a2d2.css.map": "/vortx-simulador-plr/static/css/main.6a08a2d2.css.map",
-    "main.863bca63.js.map": "/vortx-simulador-plr/static/js/main.863bca63.js.map",
+    "main.4e35a4f5.js.map": "/vortx-simulador-plr/static/js/main.4e35a4f5.js.map",
     "787.ac08c660.chunk.js.map": "/vortx-simulador-plr/static/js/787.ac08c660.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6a08a2d2.css",
-    "static/js/main.863bca63.js"
+    "static/js/main.4e35a4f5.js"
   ]
 }
