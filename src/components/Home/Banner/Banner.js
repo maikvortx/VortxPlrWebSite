@@ -1,6 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback, useState } from 'react'
-import remuneracaoCargos from '../../../domain/entities/RemuneracaoCargo'
 import { EbitidaFactory } from '../../../domain/entities/indicadores/Ebitida'
 import FormularioCalculoBonus from '../../FormularioCalculoBonus'
 import { useModal } from '../../Modal/Modal'
@@ -9,8 +8,6 @@ import ResultadoPLR from '../../ResultadoPLR'
 import {
   BannerContainer,
   Background,
-  Text,
-  Title,
   SectionBanner
 } from './style'
 import RemuneracaoCargo from '../../../domain/entities/RemuneracaoCargo'

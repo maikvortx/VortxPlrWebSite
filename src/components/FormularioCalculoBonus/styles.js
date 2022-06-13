@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { CardContent, Typography } from '@mui/material'
-import { Close, DensityMedium, SettingsApplications } from '@mui/icons-material'
+import { CardContent } from '@mui/material'
+import { Close, DensityMedium } from '@mui/icons-material'
 
 export const ContainerCadastro = styled.div`
   position: absolute;

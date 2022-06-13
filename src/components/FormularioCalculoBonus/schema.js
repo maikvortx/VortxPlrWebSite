@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { entity, field } from '@herbsjs/gotu'
 import { useCallback } from 'react'
 import TiposPersona from '../../domain/valueObjects/TiposPersona'

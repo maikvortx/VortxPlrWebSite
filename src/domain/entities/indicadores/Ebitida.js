@@ -25,7 +25,7 @@ export default class Ebitida {
     if (this.desempenho.hasMinimoAceitavel()) {
       const [pontoInicial, pontoMedio, pontoMaximo] = this.getBonificacaoIndicador()
       
-      if (this.desempenho.obtido == this.desempenho.aceitavel) return pontoInicial      
+      if (this.desempenho.obtido === this.desempenho.aceitavel) return pontoInicial      
       if (this.desempenho.obtido <= this.desempenho.esperado) return (
         ((this.desempenho.obtido - this.desempenho.aceitavel) /
           (this.desempenho.esperado - this.desempenho.aceitavel)) *

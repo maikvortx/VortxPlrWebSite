@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-pascal-case */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import { HeaderApp, HeaderContainer } from './styles'
 import LogoVortx from '../../assets/img/logo/logo-vortx.svg'

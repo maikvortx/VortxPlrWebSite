@@ -27,7 +27,7 @@ export default class NPS {
       const [pontoInicial, pontoMedio, pontoMaximo] = this.getBonificacaoIndicador()
       
       if ((this.desempenho.obtido || 0) < this.desempenho.aceitavel) return 0
-      if (this.desempenho.obtido == this.desempenho.aceitavel) return pontoInicial
+      if (this.desempenho.obtido === this.desempenho.aceitavel) return pontoInicial
       if (this.desempenho.obtido <= this.desempenho.esperado) return (
         ((this.desempenho.obtido - this.desempenho.aceitavel) /
           (this.desempenho.esperado - this.desempenho.aceitavel)) *

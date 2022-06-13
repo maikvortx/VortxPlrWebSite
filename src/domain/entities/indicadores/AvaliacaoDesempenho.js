@@ -36,7 +36,7 @@ export default class AvaliacaoDesempenho {
       const [pontoInicial, pontoMedio, pontoMaximo] = this.getBonificacaoIndicador()
       
       if (this.multiploAvaliacao < this.desempenho.aceitavel) return 0
-      if (this.multiploAvaliacao == this.desempenho.aceitavel) return pontoInicial
+      if (this.multiploAvaliacao === this.desempenho.aceitavel) return pontoInicial
       if (this.multiploAvaliacao <= this.desempenho.esperado) return (
         ((this.multiploAvaliacao - this.desempenho.aceitavel) /
           (this.desempenho.esperado - this.desempenho.aceitavel)) *
