@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useCallback, useState } from 'react'
 import remuneracaoCargos from '../../../domain/entities/RemuneracaoCargo'
 import { EbitidaFactory } from '../../../domain/entities/indicadores/Ebitida'
 import FormularioCalculoBonus from '../../FormularioCalculoBonus'
@@ -21,15 +22,13 @@ import { toast } from 'react-nextjs-toast'
 const Banner = () => {
   const { setModal } = useModal()
   const [indicadores, setIndicadores] = useState([])
-  const [salarioBase, setSalarioBase] = useState(0)
-  const [multiploSalarioAnual, setMultiploSalarioAnual] = useState(0)
 
-  const handleModal = () => {
+  const handleModal = useCallback(({ indicadores, salarioBase, multiploSalarioAnual }) => {
     setModal({
       title: `Seu resultado`,
       body: <ResultadoPLR salarioBase={salarioBase} indicadores={indicadores} multiploSalarioAnual={multiploSalarioAnual} />
     })
-  }
+  }, [indicadores])
 
   const onCalcularPlr = (calculoInput) => {
     try {
@@ -49,13 +48,15 @@ const Banner = () => {
       const avaliacaoDesempenho = AvaliacaoDesempenhoFactory(bonificacaoAlvo, multiploSalario, atingimentoGatilhoGeral)
       const nps = NPSFactory(bonificacaoAlvo, atingimentoGatilhoGeral, valorNps)
       const receitaBruta = ReceitaBrutaFactory(bonificacaoAlvo, atingimentoGatilhoGeral, valorReceitaBruta)
+      const indocadoresCalculados = [ebitida, avaliacaoDesempenho, nps, receitaBruta]
 
-      setSalarioBase(salario)
-      setIndicadores([ebitida, avaliacaoDesempenho, nps, receitaBruta])
-      setMultiploSalarioAnual(multiploSalario)
+      setIndicadores(indocadoresCalculados)
+      handleModal({
+        indicadores: indocadoresCalculados,
+        salarioBase: salario,
+        multiploSalarioAnual: multiploSalario
+      })
 
-      handleModal()
-      debugger
     } catch (error) {
       console.error(error)
       toast.notify(

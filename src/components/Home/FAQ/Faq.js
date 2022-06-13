@@ -2,6 +2,7 @@ import React from 'react'
 import { FaqSection, Title } from './style'
 import FaqItems from './FaqItems'
 import faqQuestions from './FaqQuestions'
+import uuid from '../../../helpers/uuid'
 
 function Faq() {
   return (
@@ -12,7 +13,7 @@ function Faq() {
         frequentes
       </Title>
       {faqQuestions.map((question) => (
-        <FaqItems question={question} key={question} />
+        <FaqItems key={uuid()} question={question} />
       ))}
     </FaqSection>
   )
