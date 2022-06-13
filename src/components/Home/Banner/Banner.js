@@ -17,7 +17,6 @@ import RemuneracaoCargo from '../../../domain/entities/RemuneracaoCargo'
 import { AvaliacaoDesempenhoFactory } from '../../../domain/entities/indicadores/AvaliacaoDesempenho'
 import { NPSFactory } from '../../../domain/entities/indicadores/NPS'
 import { ReceitaBrutaFactory } from '../../../domain/entities/indicadores/ReceitaBruta'
-import { toast } from 'react-nextjs-toast'
 
 const Banner = () => {
   const { setModal } = useModal()
@@ -59,12 +58,7 @@ const Banner = () => {
 
     } catch (error) {
       console.error(error)
-      toast.notify(
-        'Houve um erro ao realizar o calculo da PLR. Tente novamente mais tarde!',
-        {
-          type: 'error'
-        }
-      )
+      alert('Error: Houve um erro ao realizar o calculo da PLR. Tente novamente mais tarde!')
     }
   }
 
